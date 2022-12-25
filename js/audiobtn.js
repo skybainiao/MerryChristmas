@@ -1,5 +1,13 @@
 
+$(function() {
+    var audio = $('#media');
+    audio[0].play();
+    $("#audio_btn").bind('click', function() {
+        $(this).hasClass("off") ? ($(this).addClass("play_yinfu").removeClass("off"), $("#yinfu").addClass("rotate"), $("#media")[0].play()) : ($(this).addClass("off").removeClass("play_yinfu"), $("#yinfu").removeClass("rotate"),
+        $("#media")[0].pause());
+    });
 
+});
 
 //--创建页面监听，等待微信端页面加载完毕 触发音频播放
 document.addEventListener('DOMContentLoaded', function () {
